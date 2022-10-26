@@ -2,8 +2,9 @@
 
 #### Approach
 
-- An `AgingItem` class extends `Item` with a `updateSellIn()` method that minuses one from the `sellIn` property, as almost all items exhibit this behaviour.
-- A class per item type extends `AgingItem` with an `updateQuality()` method that applies logic based on the rules to update the `quality` property. There are special items (ex. `ConjuredItem` or `BackstagePassItem`) as well as a `GenericItem` that applies the basic rule to all others.(The basic rule being, quality decreases by 1 before sell by date, and 2 thereafter)
+- A `BasicItem` class extends `Item` with a `updateSellIn()` method that minuses one from the `sellIn` property, as almost all items exhibit this behaviour, and a `maintinQualityInBounds()` method to make sure `quality` is always less than 50 and grater than 0.
+- A class per item type extends `BasicItem` with an `updateQuality()` method that applies logic based on the rules to update the `quality` property, and finally calls `this.maintainQualityInBounds()` to ensure adherence to rules. This approach reduces repetition of `if this.quality > 0` and `if this.quality < 50` conditionals.
+- There are special items (ex. `ConjuredItem` or `BackstagePassItem`) with their own rules and a `GenericItem` that applies the basic rule (that quality decreases by 1 before sell by date, and 2 thereafter)
 - A `Shop` class iterates over items and calls both `updateQuality()` and `updateSellIn()` methods on each item.
 - The `SulfurasItem` overrieds the `updateSellIn()` with an empty method as well as adding an empty method for `updateQuality()`. This allows less logic and default approach in the `Shop` class `updateQuality()` function, plus leaves room to alter `SulfrasItem` behaviour if wanted.
 

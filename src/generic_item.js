@@ -1,9 +1,10 @@
-const Item = require("./aging_item");
+const BasicItem = require("./basic_item");
 
-class GenericItem extends Item {
+class GenericItem extends BasicItem {
   updateQuality() {
-    if (this.quality > 0) this.quality -= 1;
-    if (this.sellIn < 0 && this.quality > 0) this.quality -= 1;
+    this.quality -= 1;
+    if (this.sellIn < 0) this.quality -= 1;
+    this.maintainQualityInBounds();
   }
 }
 

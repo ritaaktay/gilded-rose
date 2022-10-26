@@ -1,11 +1,12 @@
-const AgingItem = require("./aging_item");
+const BasicItem = require("./basic_item");
 
-class BrieItem extends AgingItem {
+class BrieItem extends BasicItem {
   updateQuality() {
-    if (this.quality < 50) this.quality += 1;
-    if (this.sellIn < 0 && this.quality < 50) {
+    this.quality += 1;
+    if (this.sellIn < 0) {
       this.quality += 1;
     }
+    this.maintainQualityInBounds();
   }
 }
 

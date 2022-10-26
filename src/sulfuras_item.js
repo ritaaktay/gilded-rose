@@ -1,6 +1,6 @@
-const AgingItem = require("./aging_item");
+const BasicItem = require("./basic_item");
 
-class SulfurasItem extends AgingItem {
+class SulfurasItem extends BasicItem {
   updateQuality() {}
   updateSellIn() {}
 }

@@ -1,15 +1,18 @@
-const AgingItem = require("./aging_item");
+const BasicItem = require("./basic_item");
 
-class BackstagePassItem extends AgingItem {
+class BackstagePassItem extends BasicItem {
   updateQuality() {
     if (this.sellIn < 0) {
       this.quality = 0;
     } else {
-      this.quality += 1;
-      if (this.sellIn <= 10) this.quality += 1;
-      if (this.sellIn <= 5) this.quality += 1;
-      if (this.quality > 50) this.quality = 50;
+      this.updateApproachingSellIn();
+      this.maintainQualityInBounds();
     }
+  }
+  updateApproachingSellIn() {
+    this.quality += 1;
+    if (this.sellIn <= 10) this.quality += 1;
+    if (this.sellIn <= 5) this.quality += 1;
   }
 }
 
