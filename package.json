@@ -5,8 +5,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:log": "node test/texttest_fixture.js"
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
