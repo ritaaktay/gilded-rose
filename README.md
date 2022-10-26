@@ -22,4 +22,4 @@
 
 #### Resources
 
-- Check out [this great talk](https://www.youtube.com/watch?v=8bZh5LMaSmE&ab_channel=Confreaks) by Sandi Metz on how she's solved the Gilded Rose Kata.
+- Check out [this great talk](https://www.youtube.com/watch?v=8bZh5LMaSmE&ab_channel=Confreaks) by Sandi Metz on how she solved the kata.
