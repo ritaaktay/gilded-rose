@@ -7,7 +7,6 @@ describe("SulfurasItem", () => {
     expect(sulfurasItem.sellIn).toEqual(4);
     expect(sulfurasItem.quality).toEqual(10);
   });
-
   it("sulfuras never decrease in sell by date", function () {
     const sulfurasItem = new SulfurasItem("Sulfuras, Hand of Ragnaros", 1, 10);
     sulfurasItem.updateSellIn();
