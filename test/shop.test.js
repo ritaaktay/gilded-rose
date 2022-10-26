@@ -6,6 +6,10 @@ const BackstagePassItem = require("../src/backstagepass_item");
 const SulfurasItem = require("../src/sulfuras_item");
 
 describe("Gilded Rose", function () {
+  it("initially has an empty items array", () => {
+    const shop = new Shop();
+    expect(shop.items).toEqual([]);
+  });
   it("calls updateQuality() on all items", () => {
     const items = [
       new GenericItem("+5 Dexterity Vest", 10, 20),
