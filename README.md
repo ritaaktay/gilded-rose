@@ -4,6 +4,8 @@
 
 - The approach relies on inheritance and polymorphism, extending the parent class to two generations of children (`BaiscItem` extends `Item` and all others extend `BasicItem`). Progressively specialising behaviour allows to keep code DRY and shorten the `Shop` class `updateQuality()` function, which now delegates updating to instance methods of classes derived from `Item`.
 
+- Tests to satifsy all rules and pass with the initial unrefactored kata were written beofre attempting solution, thus ensuring nothing was broken. Test coverage is 100% (Run `npm run test:coverage`)
+
 #### Structure
 
 - `BasicItem` extends `Item` with a `updateSellIn()` method that minuses one from the `sellIn` property, as almost all items exhibit this behaviour, and a `maintinQualityInBounds()` method to make sure `quality` is always less than 50 and grater than 0.
